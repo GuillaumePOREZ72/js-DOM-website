@@ -17,6 +17,16 @@ function setupCounter(element) {
   };
   element.addEventListener("click", () => {
     setCounter(counter + 1);
+    confetti({
+      particleCount: 100,
+      startVelocity: 30,
+      spread: 360,
+      origin: {
+        x: Math.random(),
+        // since they fall down, start a bit higher than random
+        y: Math.random() - 0.2
+      }
+    });
   });
   // Initialize the counter and update button text
 
@@ -40,7 +50,7 @@ function createPage() {
   const nav = document.createElement("nav");
   const homeLink = createAndStyleElement("a", "", "Accueil");
   const aboutLink = createAndStyleElement("a", "", "A propos");
-  const fetchDataLink = createAndStyleElement("a", "", "Fetch");
+  const fetchDataLink = createAndStyleElement("a", "", "API");
   const networksLink = createAndStyleElement("a", "", "Réseaux");
 
   nav.appendChild(homeLink);
@@ -92,7 +102,7 @@ function createPage() {
     "footer",
     "",
     `
-  <p>&copy; ${new Date().getFullYear()}, Guillaume - Tous droits réservés</p>
+  <p>&copy; ${new Date().getFullYear()} - Guillaume Porez - Tous droits réservés</p>
   <p>
   <a href="https://facebook.com" target="_blank">Facebook</a> |
   <a href="https://github.com" target="_blank">Github</a> |
