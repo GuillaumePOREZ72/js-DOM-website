@@ -13,7 +13,7 @@ function setupCounter(element) {
     updateButtonText();
   };
   const updateButtonText = () => {
-    element.innerHTML = `<button>${counter}</button>`;
+    element.innerHTML = `<button>Bonjour</button>`;
   };
   element.addEventListener("click", () => {
     setCounter(counter + 1);
@@ -50,7 +50,7 @@ function createPage() {
   const nav = document.createElement("nav");
   const homeLink = createAndStyleElement("a", "", "Accueil");
   const aboutLink = createAndStyleElement("a", "", "A propos");
-  const fetchDataLink = createAndStyleElement("a", "", "API");
+  const fetchDataLink = createAndStyleElement("a", "", "Projets");
   const networksLink = createAndStyleElement("a", "", "Réseaux");
 
   nav.appendChild(homeLink);
@@ -77,15 +77,15 @@ function createPage() {
     "div",
     "section active",
     `
-  <h2>Bienvenue sur le portfolio de Guigui !</h2>
-  <p>Cliquez sur le bouton pour augmenter le compteur</p>
+  <h2>Bienvenue sur le portfolio de Guillaume !</h2>
+  
   <div id="counter" class="counter"></div>`
   );
 
   const aboutSection = createAndStyleElement(
     "div",
     "section",
-    "Cette page a entièrement été crée en Javascript."
+    "Je suis Guillaume, un développeur passionné en devenir :)"
   );
 
   const dataSection = createAndStyleElement(
@@ -169,20 +169,13 @@ async function fetchData() {
   dataContainer.appendChild(loadingElement);
 
   try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const response = await fetch("https://github.com/GuillaumePOREZ72?tab=repositories");
     const data = await response.json();
 
     setTimeout(() => {
       dataContainer.removeChild(loadingElement);
-
-      data.slice(0, 5).forEach((item) => {
-        const dataTitle = createAndStyleElement("h2", "", item.title);
-        const dataBody = createAndStyleElement("p", "", item.body);
-
-        dataContainer.appendChild(dataTitle);
-        dataContainer.appendChild(dataBody);
       });
-    }, 1000);
+    
   } catch (error) {
     dataContainer.removeChild(loadingElement);
     dataContainer.textContent = "Failed to fetch data";

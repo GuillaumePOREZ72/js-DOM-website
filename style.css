@@ -3,7 +3,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Arial', sans-serif;
+  font-family: 'CommitMono', sans-serif;
   background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
@@ -18,6 +18,25 @@ html {
   height: 100%;
 }
 
+button {
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-family: 'CommitMono', sans-serif;
+  font-size: 15px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+button:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+
 nav {
   display: flex;
   justify-content: center;
@@ -25,6 +44,7 @@ nav {
   background-color: #000000;
   padding: 10px 0;
   position: relative;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.5);
 }
 
 nav a {
@@ -34,6 +54,7 @@ nav a {
   font-size: 16px;
   cursor: pointer;
   transition: color 0.3s;
+  padding-inline: 10px;
 }
 
 nav a:hover {
